@@ -172,14 +172,6 @@ module.exports.createBookingGuest = (req, res) => {
 
 module.exports.getMyBookingsUser = (req, res) => {
     return Booking.find({ userId: req.user.id })
-        .populate({
-            path: 'flightId',
-            populate: [
-                { path: 'originAirportId' },
-                { path: 'destinationAirportId' },
-                { path: 'airlineId' }
-            ]
-        })
         .then(result => {
             if (result.length === 0) {
                 return res.status(404).send({ message: "No bookings found" });

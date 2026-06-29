@@ -9,7 +9,7 @@ router.post("/create-booking-passenger", verify, bookingPassengerController.crea
 
 router.get("/get-booking-passengers/:bookingId", bookingPassengerController.getBookingPassengerByBooking);
 
-router.post('/guest/create-booking-passenger', bookingPassengerController. createBookingPassengerGuest);
+
 
 // ADMIN LEVEL ACCESS
 
